@@ -1036,10 +1036,42 @@
 </footer>
 
 <script>
+  const heroTexts = {
+    es: {
+      tag: 'Arquitectura · Territorio · Chile',
+      h1: 'El territorio<br>es mi <em>escuela.</em>',
+      desc: 'Arquitectura rural, bioconstrucción y planificación territorial en Chile. Desde el territorio, y ahora desde el mar.',
+      btn1: 'Ver servicios',
+      btn2: 'Plantillas DOM',
+      scroll: 'Desplázate para explorar'
+    },
+    en: {
+      tag: 'Architecture · Territory · Chile',
+      h1: 'The territory<br>is my <em>school.</em>',
+      desc: 'Rural architecture, bioconstruction and territorial planning across Chile. From the land, and now from the sea.',
+      btn1: 'View services',
+      btn2: 'DOM Templates',
+      scroll: 'Scroll to explore'
+    }
+  };
+
   function setLang(lang) {
+    // Toggle body class
     document.body.className = lang === 'en' ? 'lang-en' : '';
+
+    // Active button style
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+    // Swap hero text directly
+    const t = heroTexts[lang];
+    document.querySelector('.hero-tag').innerHTML = t.tag;
+    document.querySelector('.hero h1').innerHTML = t.h1;
+    document.querySelector('.hero-desc').innerHTML = t.desc;
+    const btns = document.querySelectorAll('.hero-cta a');
+    btns[0].textContent = t.btn1;
+    btns[1].textContent = t.btn2;
+    document.querySelector('.hero-scroll span').textContent = t.scroll;
   }
 </script>
 
