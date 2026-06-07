@@ -240,6 +240,31 @@
   .section-title em { font-style: italic; color: var(--terra); }
 
   /* ABOUT */
+  .about-photo-wrap {
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    border-radius: 3px;
+    filter: saturate(0.9);
+  }
+
+  .about-photo-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -726,6 +751,10 @@
     <span class="es">Arquitecta, nómada,<br><em>trazadora de territorios.</em></span>
     <span class="en">Architect, nomad,<br><em>mapper of territories.</em></span>
   </h2>
+  <div class="about-photo-wrap">
+    <img src="loreto.jpg" alt="Loreto Salazar — Refugio Nómada" class="about-photo">
+    <div class="about-photo-caption"><span class="es">Manquemapu · Los Lagos · Chile</span><span class="en">Manquemapu · Los Lagos · Chile</span></div>
+  </div>
   <div class="about-grid">
     <div class="about-text">
       <p class="es">Soy Loreto Salazar Salina, arquitecta titulada con más de 10 años de experiencia en proyectos rurales, permisos DOM y planificación territorial en Chile. Mi práctica nació del territorio: de los caminos sin pavimento, de los bordes de río, de las comunidades que construyen con lo que tienen.</p>
