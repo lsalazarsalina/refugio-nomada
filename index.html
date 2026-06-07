@@ -655,19 +655,42 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: gap;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-globe {
+    position: absolute;
+    right: -60px;
+    bottom: -40px;
+    width: 320px;
+    opacity: 0.07;
+    pointer-events: none;
   }
 
   .footer-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.9rem;
     color: var(--muted);
+    position: relative;
   }
 
   .footer-patent {
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     color: var(--muted);
+    position: relative;
+  }
+
+  .chile-silhouette {
+    width: 180px;
+    opacity: 0.12;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    pointer-events: none;
   }
 
   /* LANG CONTENT */
@@ -763,7 +786,8 @@
       <p class="es">Actualmente embarco en un largo viaje en velero por el Atlántico. Desde el mar, sigo proyectando.</p>
       <p class="en">Currently I'm embarking on a long sailing voyage across the Atlantic. From the sea, I keep designing.</p>
     </div>
-    <div class="about-data">
+    <div class="about-data" style="position:relative;">
+      <img src="chile.png" alt="Chile" class="chile-silhouette">
       <div class="data-item">
         <div class="data-label"><span class="es">Patente profesional</span><span class="en">Professional license</span></div>
         <div class="data-value">N°300833</div>
@@ -1027,6 +1051,7 @@
 </section>
 
 <footer>
+  <img src="mundo.jpg" alt="" class="footer-globe">
   <div class="footer-name">
     Loreto Salazar Arquitectura y Planificación Territorial EIRL
   </div>
