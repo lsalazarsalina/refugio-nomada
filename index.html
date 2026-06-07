@@ -115,16 +115,27 @@
 
   .hero-chile {
     position: absolute;
-    right: -1rem;
+    right: -3rem;
     top: 50%;
-    transform: translateY(-50%);
-    width: 360px;
-    opacity: 0.13;
+    transform: translateY(-45%);
+    width: 55%;
+    max-width: 520px;
+    min-width: 280px;
+    opacity: 0.18;
     pointer-events: none;
+  }
+
+  @media (max-width: 700px) {
+    .hero-chile {
+      width: 80%;
+      right: -1rem;
+      opacity: 0.1;
+    }
   }
 
   .hero-inner {
     width: 100%;
+    max-width: 520px;
     position: relative;
     z-index: 1;
   }
