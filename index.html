@@ -73,26 +73,31 @@
 
   .lang-toggle {
     display: flex;
-    gap: 0.5rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    align-items: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+
+  .lang-sep {
+    color: var(--muted);
+    margin: 0 0.2rem;
   }
 
   .lang-btn {
     background: none;
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
+    border: none;
+    padding: 0.2rem 0.3rem;
     cursor: pointer;
     font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
     color: var(--muted);
-    transition: all 0.2s;
-    border-radius: 2px;
+    transition: color 0.2s;
+    letter-spacing: 0.08em;
   }
 
   .lang-btn.active {
-    background: var(--terra);
-    border-color: var(--terra);
-    color: white;
+    color: var(--terra);
+    font-weight: 500;
   }
 
   /* HERO */
@@ -703,6 +708,7 @@
   </ul>
   <div class="lang-toggle">
     <button class="lang-btn active" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">/</span>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
   </div>
 </nav>
