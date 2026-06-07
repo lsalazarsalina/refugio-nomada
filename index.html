@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refugio Nómada — Estudio de Arquitectura</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terra: #C17A5A;
+    --terra-light: #d4956f;
+    --terra-pale: #f5ede6;
+    --dark: #1a1612;
+    --mid: #4a3f35;
+    --light: #f9f5f1;
+    --muted: #9a8a7e;
+    --border: #e8ddd6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(249,245,241,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terra); }
+
+  .lang-toggle {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .lang-btn {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .lang-btn.active {
+    background: var(--terra);
+    border-color: var(--terra);
+    color: white;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-inner {
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--terra);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terra);
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    color: var(--mid);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--terra);
+    color: white;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-primary:hover { background: var(--terra-light); }
+
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--mid);
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-secondary:hover { border-color: var(--terra); color: var(--terra); }
+
+  .hero-scroll {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--muted);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { width: 40px; opacity: 0.4; }
+    50% { width: 60px; opacity: 1; }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 2rem;
+  }
+
+  .section-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 2rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--terra); }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .about-text p {
+    color: var(--mid);
+    margin-bottom: 1.2rem;
+    font-size: 0.97rem;
+  }
+
+  .about-data {
+    border-left: 2px solid var(--terra);
+    padding-left: 2rem;
+  }
+
+  .data-item {
+    margin-bottom: 2rem;
+  }
+
+  .data-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .data-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--dark);
+  }
+
+  /* SERVICIOS */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5px;
+    margin-top: 3rem;
+    background: var(--border);
+  }
+
+  .service-card {
+    background: var(--light);
+    padding: 2.5rem;
+    transition: background 0.2s;
+  }
+
+  .service-card:hover { background: var(--terra-pale); }
+
+  .service-num {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--terra);
+    margin-bottom: 1rem;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* PLANTILLAS */
+  .plantillas-intro {
+    color: var(--mid);
+    max-width: 580px;
+    margin-bottom: 3rem;
+  }
+
+  .plantillas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .plantilla-card {
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    border-radius: 3px;
+  }
+
+  .plantilla-card:hover {
+    border-color: var(--terra);
+    transform: translateY(-3px);
+  }
+
+  .plantilla-card.featured {
+    border-color: var(--terra);
+    background: var(--terra-pale);
+  }
+
+  .plantilla-badge {
+    position: absolute;
+    top: -1px; right: 1.5rem;
+    background: var(--terra);
+    color: white;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0 0 3px 3px;
+  }
+
+  .plantilla-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+  }
+
+  .plantilla-price {
+    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--terra);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .plantilla-items {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .plantilla-items li {
+    font-size: 0.8rem;
+    color: var(--mid);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .plantilla-items li::before {
+    content: '—';
+    color: var(--terra);
+    flex-shrink: 0;
+  }
+
+  .btn-comprar {
+    display: block;
+    text-align: center;
+    background: var(--terra);
+    color: white;
+    padding: 0.7rem;
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-comprar:hover { background: var(--terra-light); }
+
+  /* BLOG */
+  .blog-grid {
+    display: grid;
+    gap: 0;
+    margin-top: 3rem;
+  }
+
+  .blog-post {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .blog-post:hover { opacity: 0.7; }
+
+  .blog-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding-top: 0.2rem;
+    line-height: 1.4;
+  }
+
+  .blog-category {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .blog-excerpt {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  .blog-coming {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* PORTFOLIO */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .portfolio-item {
+    aspect-ratio: 4/3;
+    background: var(--terra-pale);
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .portfolio-item.tall {
+    aspect-ratio: 3/4;
+    grid-row: span 2;
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,22,18,0.85) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+  .portfolio-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--terra);
+  }
+
+  .portfolio-placeholder-icon {
+    font-size: 2rem;
+    opacity: 0.4;
+  }
+
+  .portfolio-placeholder-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  .portfolio-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 0.2rem;
+  }
+
+  .portfolio-loc {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* CONTACTO */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .contact-text p {
+    color: var(--mid);
+    margin-bottom: 1rem;
+    font-size: 0.97rem;
+  }
+
+  .contact-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: var(--terra); }
+
+  .contact-link-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  .contact-nota {
+    background: var(--terra-pale);
+    border-left: 3px solid var(--terra);
+    padding: 1.5rem 2rem;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .contact-nota p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .contact-nota strong {
+    color: var(--terra);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .footer-patent {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  /* LANG CONTENT */
+  .en { display: none; }
+  body.lang-en .es { display: none; }
+  body.lang-en .en { display: block; }
+  span.es, span.en { display: inline; }
+  body.lang-en span.es { display: none; }
+  body.lang-en span.en { display: inline; }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .plantillas-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-item.tall { aspect-ratio: 4/3; grid-row: span 1; }
+    .blog-post { grid-template-columns: 1fr; gap: 0.5rem; }
+    .nav-links { display: none; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-desc { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-cta { animation: fadeUp 0.6s 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Refugio Nómada</a>
+  <ul class="nav-links">
+    <li><a href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About</span></a></li>
+    <li><a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a></li>
+    <li><a href="#plantillas"><span class="es">Plantillas DOM</span><span class="en">DOM Templates</span></a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="es">Arquitectura · Territorio · Chile</span>
+      <span class="en">Architecture · Territory · Chile</span>
+    </div>
+    <h1>
+      <span class="es">El territorio<br>es mi <em>escuela.</em></span>
+      <span class="en">The territory<br>is my <em>school.</em></span>
+    </h1>
+    <p class="hero-desc es">
+      Proyectos de arquitectura rural, bioconstrucción y planificación territorial desde Melipilla hacia todo Chile. Más de 10 años navegando permisos DOM, paisajes y comunidades.
+    </p>
+    <p class="hero-desc en">
+      Rural architecture, bioconstruction and territorial planning projects from Melipilla across Chile. Over 10 years navigating DOM permits, landscapes and communities.
+    </p>
+    <div class="hero-cta">
+      <a href="#servicios" class="btn-primary">
+        <span class="es">Ver servicios</span><span class="en">View services</span>
+      </a>
+      <a href="#plantillas" class="btn-secondary">
+        <span class="es">Plantillas DOM</span><span class="en">DOM Templates</span>
+      </a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span class="es">Desplázate para explorar</span>
+      <span class="en">Scroll to explore</span>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="section-tag">
+    <span class="es">Sobre mí</span><span class="en">About me</span>
+  </div>
+  <h2 class="section-title">
+    <span class="es">Arquitecta, nómada,<br><em>trazadora de territorios.</em></span>
+    <span class="en">Architect, nomad,<br><em>mapper of territories.</em></span>
+  </h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="es">Soy Loreto Salazar Salina, arquitecta titulada con más de 10 años de experiencia en proyectos rurales, permisos DOM y planificación territorial en Chile. Mi práctica nació del territorio: de los caminos sin pavimento, de los bordes de río, de las comunidades que construyen con lo que tienen.</p>
+      <p class="en">I'm Loreto Salazar Salina, licensed architect with over 10 years of experience in rural projects, DOM permits and territorial planning across Chile. My practice was born from the land itself: unpaved roads, riverbanks, communities that build with what they have.</p>
+      <p class="es">Refugio Nómada es el nombre que le di a esta forma de entender la arquitectura: como un acto de escucha antes que de diseño, como un proceso que se mueve con las personas y los paisajes.</p>
+      <p class="en">Refugio Nómada is the name I gave to this way of understanding architecture: as an act of listening before designing, as a process that moves with people and landscapes.</p>
+      <p class="es">Actualmente embarco en un largo viaje en velero por el Atlántico. Desde el mar, sigo proyectando.</p>
+      <p class="en">Currently I'm embarking on a long sailing voyage across the Atlantic. From the sea, I keep designing.</p>
+    </div>
+    <div class="about-data">
+      <div class="data-item">
+        <div class="data-label"><span class="es">Patente profesional</span><span class="en">Professional license</span></div>
+        <div class="data-value">N°300833</div>
+      </div>
+      <div class="data-item">
+        <div class="data-label"><span class="es">Experiencia</span><span class="en">Experience</span></div>
+        <div class="data-value"><span class="es">+10 años</span><span class="en">+10 years</span></div>
+      </div>
+      <div class="data-item">
+        <div class="data-label"><span class="es">Área principal</span><span class="en">Main area</span></div>
+        <div class="data-value"><span class="es">Melipilla · RM</span><span class="en">Melipilla · RM</span></div>
+      </div>
+      <div class="data-item">
+        <div class="data-label"><span class="es">Proyectos activos</span><span class="en">Active projects</span></div>
+        <div class="data-value"><span class="es">Pucón · Los Lagos · RM</span><span class="en">Pucón · Los Lagos · RM</span></div>
+      </div>
+      <div class="data-item">
+        <div class="data-label"><span class="es">Especialidades</span><span class="en">Specialties</span></div>
+        <div class="data-value" style="font-size:1rem; line-height:1.5;">
+          <span class="es">DOM · Bioconstrucción<br>Art. 55 LGUC · Rural</span>
+          <span class="en">DOM · Bioconstruction<br>Art. 55 LGUC · Rural</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-tag">
+    <span class="es">Servicios</span><span class="en">Services</span>
+  </div>
+  <h2 class="section-title">
+    <span class="es">¿En qué puedo<br><em>acompañarte?</em></span>
+    <span class="en">How can I<br><em>support you?</em></span>
+  </h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-name"><span class="es">Vivienda Rural & Autoconstrucción</span><span class="en">Rural Housing & Self-Build</span></div>
+      <p class="service-desc es">Diseño y acompañamiento profesional para viviendas rurales adaptadas al entorno, con criterios de bioconstrucción y normativa vigente.</p>
+      <p class="service-desc en">Professional design and guidance for rural homes adapted to their environment, using bioconstruction principles and current regulations.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-name"><span class="es">Permisos DOM & Regularizaciones</span><span class="en">DOM Permits & Regularizations</span></div>
+      <p class="service-desc es">Gestión completa de expedientes de permiso de edificación, recepciones y regularizaciones ante municipios de la RM y regiones.</p>
+      <p class="service-desc en">Full management of building permit files, certificates of occupancy and regularizations before municipalities in the RM and other regions.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-name"><span class="es">Cambio de Uso de Suelo · IFC</span><span class="en">Land Use Change · IFC</span></div>
+      <p class="service-desc es">Tramitación ante SAG, SEREMI MINVU y DOM para proyectos rurales o en expansión urbana bajo Art. 55 LGUC.</p>
+      <p class="service-desc en">Processing with SAG, SEREMI MINVU and DOM for rural or urban-expansion projects under Art. 55 LGUC.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-name"><span class="es">Subsidios Habitacionales</span><span class="en">Housing Subsidies</span></div>
+      <p class="service-desc es">Asesoría especializada en DS 10, DS 27 y DS 49 en Melipilla, El Monte, Alhué, Curacaví y comunas aledañas.</p>
+      <p class="service-desc en">Specialized advisory on DS 10, DS 27 and DS 49 in Melipilla, El Monte, Alhué, Curacaví and surrounding municipalities.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-name"><span class="es">Asesorías Comunitarias</span><span class="en">Community Advisory</span></div>
+      <p class="service-desc es">Acompañamiento a comunidades organizadas en gestión de proyectos habitacionales e infraestructura comunitaria sustentable.</p>
+      <p class="service-desc en">Support for organized communities in managing housing projects and sustainable community infrastructure.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-name"><span class="es">Ploteo e Impresión de Planos</span><span class="en">Plan Printing & Plotting</span></div>
+      <p class="service-desc es">Impresión de alta calidad en formatos A1, A2 y A4. Envío de archivos PDF o CAD. Despacho a domicilio en Melipilla.</p>
+      <p class="service-desc en">High-quality printing in A1, A2 and A4 formats. PDF or CAD file submission. Home delivery in Melipilla.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PLANTILLAS -->
+<section id="plantillas">
+  <div class="section-tag">
+    <span class="es">Plantillas DOM</span><span class="en">DOM Templates</span>
+  </div>
+  <h2 class="section-title">
+    <span class="es">Documentos reales,<br><em>listos para usar.</em></span>
+    <span class="en">Real documents,<br><em>ready to use.</em></span>
+  </h2>
+  <p class="plantillas-intro es">Kit de plantillas Word editables para el expediente de Permiso de Edificación Obra Nueva en Chile, desarrolladas a partir de documentos reales aprobados por DOM, con normativa vigente 2026.</p>
+  <p class="plantillas-intro en">Editable Word template kit for the Chilean Building Permit (Obra Nueva) file, developed from real DOM-approved documents, compliant with 2026 regulations.</p>
+
+  <div class="plantillas-grid">
+    <div class="plantilla-card">
+      <div class="plantilla-name"><span class="es">Plantilla Individual</span><span class="en">Single Template</span></div>
+      <div class="plantilla-price">$15.000</div>
+      <ul class="plantilla-items">
+        <li><span class="es">1 documento a elección</span><span class="en">1 document of your choice</span></li>
+        <li>EETT, Informe Térmico</li>
+        <li>Napa, Carta Exención</li>
+        <li><span class="es">Resistencia al Fuego o Memoria Higrotérmica</span><span class="en">Fire Resistance or Hygrothermal Report</span></li>
+      </ul>
+      <a href="https://mpago.la/1Xpu8CV" class="btn-comprar" target="_blank">
+        <span class="es">Comprar</span><span class="en">Buy now</span>
+      </a>
+    </div>
+
+    <div class="plantilla-card featured">
+      <div class="plantilla-badge"><span class="es">Popular</span><span class="en">Popular</span></div>
+      <div class="plantilla-name">Pack Obra Nueva</div>
+      <div class="plantilla-price">$35.000</div>
+      <ul class="plantilla-items">
+        <li>Checklist expediente DOM</li>
+        <li>EETT</li>
+        <li>Carta Exención Estructural</li>
+        <li>Informe Napa Freática</li>
+        <li>Informe Térmico DS N°15</li>
+        <li>Resistencia al Fuego NCh 3684</li>
+        <li>Memoria Higrotérmica</li>
+      </ul>
+      <a href="https://mpago.la/2JwwvLY" class="btn-comprar" target="_blank">
+        <span class="es">Comprar</span><span class="en">Buy now</span>
+      </a>
+    </div>
+
+    <div class="plantilla-card">
+      <div class="plantilla-name">Pack Premium + Excel</div>
+      <div class="plantilla-price">$49.000</div>
+      <ul class="plantilla-items">
+        <li><span class="es">Todo el Pack Obra Nueva</span><span class="en">Full Obra Nueva Pack</span></li>
+        <li><span class="es">Planilla Excel superficies</span><span class="en">Excel surface spreadsheet</span></li>
+        <li><span class="es">Normas urbanísticas</span><span class="en">Urban planning norms</span></li>
+        <li><span class="es">Cálculo Meyerhof incluido</span><span class="en">Meyerhof calculation included</span></li>
+      </ul>
+      <a href="https://mpago.la/2iGFvGt" class="btn-comprar" target="_blank">
+        <span class="es">Comprar</span><span class="en">Buy now</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-tag">Blog</div>
+  <h2 class="section-title">
+    <span class="es">Bitácora del<br><em>territorio y del mar.</em></span>
+    <span class="en">Logbook of<br><em>land and sea.</em></span>
+  </h2>
+
+  <div class="blog-grid">
+    <div class="blog-coming">
+      <span class="es">✦ Próximamente: artículos sobre arquitectura rural, bioconstrucción y navegación desde el Atlántico. ✦</span>
+      <span class="en">✦ Coming soon: articles on rural architecture, bioconstruction and sailing the Atlantic. ✦</span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-tag">Portfolio</div>
+  <h2 class="section-title">
+    <span class="es">Proyectos que<br><em>hablan del lugar.</em></span>
+    <span class="en">Projects that<br><em>speak of place.</em></span>
+  </h2>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item tall">
+      <div class="portfolio-placeholder">
+        <div class="portfolio-placeholder-icon">◻</div>
+        <div class="portfolio-placeholder-text"><span class="es">Quincho Los Cipreses</span><span class="en">Los Cipreses Quincho</span></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-title"><span class="es">Quincho Los Cipreses</span><span class="en">Los Cipreses Quincho</span></div>
+        <div class="portfolio-loc">Pucón · <span class="es">Obra Nueva</span><span class="en">New Build</span></div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-placeholder">
+        <div class="portfolio-placeholder-icon">◻</div>
+        <div class="portfolio-placeholder-text"><span class="es">Galería El Cofre</span><span class="en">El Cofre Gallery</span></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-title">Galería El Cofre</div>
+        <div class="portfolio-loc">Curacaví · <span class="es">Permiso Edificación</span><span class="en">Building Permit</span></div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-placeholder">
+        <div class="portfolio-placeholder-icon">◻</div>
+        <div class="portfolio-placeholder-text"><span class="es">Bosque de Santa Rosa</span><span class="en">Santa Rosa Forest</span></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-title">Bosque de Santa Rosa</div>
+        <div class="portfolio-loc">Melipilla · <span class="es">Fusión de Parcelas</span><span class="en">Plot Merging</span></div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-placeholder">
+        <div class="portfolio-placeholder-icon">◻</div>
+        <div class="portfolio-placeholder-text"><span class="es">Strip Center Olmué</span><span class="en">Olmué Strip Center</span></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-title">Strip Center Olmué</div>
+        <div class="portfolio-loc">Olmué · <span class="es">Anteproyecto</span><span class="en">Preliminary Design</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-tag">
+    <span class="es">Contacto</span><span class="en">Contact</span>
+  </div>
+  <h2 class="section-title">
+    <span class="es">Conversemos<br><em>desde donde estés.</em></span>
+    <span class="en">Let's talk<br><em>from wherever you are.</em></span>
+  </h2>
+  <div class="contact-grid">
+    <div class="contact-text">
+      <p class="es">Trabajo de forma remota y presencial en la Región Metropolitana y a distancia en todo Chile. Puedes escribirme aunque esté navegando — respondo con calma pero siempre respondo.</p>
+      <p class="en">I work remotely and in person within the Metropolitan Region, and remotely throughout Chile. You can write to me even if I'm at sea — I reply calmly but I always reply.</p>
+      <div class="contact-links">
+        <a href="mailto:contacto@refugionomada.com" class="contact-link">
+          <div>
+            <span class="contact-link-label">Email</span>
+            contacto@refugionomada.com
+          </div>
+        </a>
+        <a href="tel:+56952130117" class="contact-link">
+          <div>
+            <span class="contact-link-label">WhatsApp</span>
+            +56 9 5213 0117
+          </div>
+        </a>
+        <a href="https://www.instagram.com/refugionomada.cl/" class="contact-link" target="_blank">
+          <div>
+            <span class="contact-link-label">Instagram</span>
+            @refugionomada.cl
+          </div>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="contact-nota">
+        <p class="es">
+          <strong>Nota de viaje:</strong> Desde junio 2026 estaré navegando el Atlántico a bordo del velero Silver Harmony. Los proyectos activos continúan en gestión remota. Si tienes una consulta urgente, escríbeme por WhatsApp.
+        </p>
+        <p class="en">
+          <strong>Sailing note:</strong> From June 2026 I'll be sailing the Atlantic aboard the sailing vessel Silver Harmony. Active projects continue under remote management. For urgent matters, please reach me via WhatsApp.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">
+    Loreto Salazar Arquitectura y Planificación Territorial EIRL
+  </div>
+  <div class="footer-patent">
+    <span class="es">Patente</span><span class="en">License</span> N°300833 · lsalazarsalina@gmail.com
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = lang === 'en' ? 'lang-en' : '';
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
