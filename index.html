@@ -662,10 +662,11 @@
 
   .footer-globe {
     position: absolute;
-    right: -60px;
-    bottom: -40px;
-    width: 320px;
-    opacity: 0.07;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    width: 500px;
+    opacity: 0.35;
     pointer-events: none;
   }
 
@@ -674,6 +675,7 @@
     font-size: 0.9rem;
     color: var(--muted);
     position: relative;
+    z-index: 1;
   }
 
   .footer-patent {
@@ -681,16 +683,16 @@
     letter-spacing: 0.1em;
     color: var(--muted);
     position: relative;
+    z-index: 1;
   }
 
   .chile-silhouette {
-    width: 180px;
-    opacity: 0.12;
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    pointer-events: none;
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    opacity: 0.5;
+    margin: 2rem auto 0;
+    transform: rotate(90deg);
   }
 
   /* LANG CONTENT */
@@ -787,7 +789,6 @@
       <p class="en">Currently I'm embarking on a long sailing voyage across the Atlantic. From the sea, I keep designing.</p>
     </div>
     <div class="about-data" style="position:relative;">
-      <img src="chile.png" alt="Chile" class="chile-silhouette">
       <div class="data-item">
         <div class="data-label"><span class="es">Patente profesional</span><span class="en">Professional license</span></div>
         <div class="data-value">N°300833</div>
@@ -811,6 +812,7 @@
           <span class="en">DOM · Bioconstruction<br>Art. 55 LGUC · Rural</span>
         </div>
       </div>
+      <img src="chile.png" alt="Chile" class="chile-silhouette">
     </div>
   </div>
 </section>
