@@ -14,6 +14,7 @@
     --mid: #4a3f35;
     --light: #ffffff;
     --muted: #9a8a7e;
+    --accent: #2d3a4a;
     --border: #e8ddd6;
   }
 
@@ -132,7 +133,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--terra);
+    color: var(--accent);
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
@@ -144,7 +145,7 @@
     display: inline-block;
     width: 32px;
     height: 1px;
-    background: var(--terra);
+    background: var(--accent);
   }
 
   .hero h1 {
@@ -228,7 +229,7 @@
 
   /* SECTIONS */
   section {
-    padding: 4rem 2rem;
+    padding: 2.5rem 2rem;
     max-width: 900px;
     margin: 0 auto;
   }
@@ -243,14 +244,15 @@
     font-size: 0.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--terra);
+    color: var(--accent);
+    font-weight: 600;
     margin-bottom: 1rem;
   }
 
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.15;
     color: var(--dark);
     margin-bottom: 2rem;
@@ -543,7 +545,7 @@
   /* PORTFOLIO */
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
   }
@@ -557,8 +559,8 @@
   }
 
   .portfolio-item.tall {
-    aspect-ratio: 3/4;
-    grid-row: span 2;
+    aspect-ratio: 4/3;
+    grid-row: span 1;
   }
 
   .portfolio-overlay {
@@ -741,7 +743,7 @@
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .services-grid { grid-template-columns: 1fr; }
     .plantillas-grid { grid-template-columns: 1fr; }
-    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     .portfolio-item.tall { aspect-ratio: 4/3; grid-row: span 1; }
     .blog-post { grid-template-columns: 1fr; gap: 0.5rem; }
     .nav-links { display: none; }
@@ -845,7 +847,6 @@
           <span class="en">DOM · Bioconstruction<br>Art. 55 LGUC · Rural</span>
         </div>
       </div>
-      <img src="chile.png" alt="Chile" class="chile-silhouette">
     </div>
   </div>
 </section>
@@ -1073,7 +1074,10 @@
           <strong>Sailing note:</strong> From June 2026 I'll be sailing the Atlantic aboard the sailing vessel Silver Harmony. Active projects continue under remote management. For urgent matters, please reach me via WhatsApp.
         </p>
       </div>
-      <img src="img/loreto-mar.jpg" alt="Loreto mirando el mar" style="width:100%;margin-top:1.5rem;border-radius:3px;object-fit:cover;max-height:320px;object-position:center 30%;filter:saturate(0.85);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem;">
+        <img src="img/loreto-mar.jpg" alt="Loreto en el mar" style="width:100%;height:220px;object-fit:cover;border-radius:3px;filter:saturate(0.85);">
+        <img src="img/loreto.jpg" alt="Loreto mirando el horizonte" style="width:100%;height:220px;object-fit:cover;object-position:center 30%;border-radius:3px;filter:saturate(0.85);">
+      </div>
     </div>
   </div>
 </section>
