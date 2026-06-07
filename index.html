@@ -254,10 +254,17 @@
     width: 100%;
     max-height: 480px;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 20%;
     display: block;
     border-radius: 3px;
     filter: saturate(0.9);
+  }
+
+  @media (max-width: 700px) {
+    .about-photo {
+      max-height: 320px;
+      object-position: center 15%;
+    }
   }
 
   .about-photo-caption {
@@ -725,10 +732,10 @@
       <span class="en">The territory<br>is my <em>school.</em></span>
     </h1>
     <p class="hero-desc es">
-      Proyectos de arquitectura rural, bioconstrucción y planificación territorial desde Melipilla hacia todo Chile. Más de 10 años navegando permisos DOM, paisajes y comunidades.
+      Arquitectura rural, bioconstrucción y planificación territorial en Chile. Desde el territorio, y ahora desde el mar.
     </p>
     <p class="hero-desc en">
-      Rural architecture, bioconstruction and territorial planning projects from Melipilla across Chile. Over 10 years navigating DOM permits, landscapes and communities.
+      Rural architecture, bioconstruction and territorial planning across Chile. From the land, and now from the sea.
     </p>
     <div class="hero-cta">
       <a href="#servicios" class="btn-primary">
