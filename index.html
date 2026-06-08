@@ -282,33 +282,24 @@
 
   /* ABOUT */
   .about-photo-wrap {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     position: relative;
-    float: left;
-    width: 340px;
-    margin-right: 2.5rem;
-    shape-outside: border-box;
   }
 
   .about-photo {
     width: 100%;
-    max-height: 420px;
+    max-height: 600px;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 40%;
     display: block;
     border-radius: 3px;
     filter: saturate(0.9);
   }
 
   @media (max-width: 700px) {
-    .about-photo-wrap {
-      float: none;
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 1.5rem;
-    }
     .about-photo {
       max-height: 320px;
+      object-position: center 15%;
     }
   }
 
