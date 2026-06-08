@@ -579,6 +579,20 @@
     display: inline-block;
   }
 
+  .post-body p {
+    color: var(--mid);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  }
+  .post-body h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 2rem 0 0.8rem;
+  }
+
   /* PORTFOLIO */
   .portfolio-grid {
     display: grid;
@@ -1002,9 +1016,52 @@
   </h2>
 
   <div class="blog-grid">
-    <div class="blog-coming">
-      <span class="es">✦ Próximamente: artículos sobre arquitectura rural, bioconstrucción y navegación desde el Atlántico. ✦</span>
-      <span class="en">✦ Coming soon: articles on rural architecture, bioconstruction and sailing the Atlantic. ✦</span>
+    <a href="#post-1" class="blog-post" onclick="document.getElementById('post-1').style.display='block';return false;">
+      <div class="blog-date">Junio<br>2026</div>
+      <div>
+        <div class="blog-category es">Territorio · Normativa</div>
+        <div class="blog-category en">Territory · Regulations</div>
+        <div class="blog-title es">Lo que nadie te dice cuando compras un terreno rural en Chile</div>
+        <div class="blog-title en">What nobody tells you when buying rural land in Chile</div>
+        <div class="blog-excerpt es">Cesiones de derechos, retazos informales, napas freáticas y permisos DOM: una guía desde la experiencia en Melipilla y la RM rural.</div>
+        <div class="blog-excerpt en">Rights transfers, informal lots, water tables and DOM permits: a guide from years of experience in Melipilla and rural RM.</div>
+      </div>
+    </a>
+  </div>
+
+  <div id="post-1" style="display:none; margin-top:3rem; max-width:680px;">
+    <button onclick="document.getElementById('post-1').style.display='none'" style="background:none;border:1px solid var(--border);padding:0.4rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.06em;cursor:pointer;margin-bottom:2rem;color:var(--mid);">← <span class="es">Volver</span><span class="en">Back</span></button>
+
+    <div class="blog-category es" style="margin-bottom:0.5rem;">Territorio · Normativa</div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;line-height:1.15;color:var(--dark);margin-bottom:0.5rem;" class="es">Lo que nadie te dice cuando compras un terreno rural en Chile</h3>
+    <p style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;">Loreto Salazar Salina · Junio 2026</p>
+
+    <div class="post-body">
+      <p class="es">Durante más de diez años trabajé en la Región Metropolitana rural —Melipilla, Alhué, El Monte, Curacaví— acompañando familias que querían construir su casa en el campo. Y una y otra vez me encontré con el mismo problema: personas que compraron un terreno de buena fe, con ahorros de años, y que al momento de construir se encontraron con una trampa legal que nadie les había advertido.</p>
+
+      <h4 class="es">Las cesiones de derechos: el negocio más peligroso del mundo rural</h4>
+      <p class="es">Cuando alguien te vende una "cesión de derechos" sobre un paño de terreno, no te está vendiendo una propiedad. Te está cediendo su parte en un bien que pertenece a varios herederos o copropietarios, muchos de los cuales ni siquiera saben que esa venta ocurrió. No hay escritura inscrita en el Conservador de Bienes Raíces. No hay título saneado. No hay nada que te proteja si mañana aparece otro heredero a reclamar.</p>
+      <p class="es" style="background:var(--terra-pale);border-left:3px solid var(--terra);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;">Si alguien te ofrece una cesión de derechos, aléjate. No importa cuán barato sea. No importa cuánto confíes en quien vende.</p>
+
+      <h4 class="es">Los "retazos de terreno": cuando la informalidad se vuelve un laberinto</h4>
+      <p class="es">Los retazos son subdivisiones informales de predios rurales, vendidos sin plano de subdivisión aprobado por el municipio ni por el SAG. Muchos no cumplen con la superficie mínima exigida por la normativa. Al no existir como unidad legal independiente, no tienen rol SII propio y es imposible obtener permisos de edificación. La persona compró, construyó, vivió años ahí, y cuando quiso regularizar descubrió que su terreno no existe legalmente.</p>
+
+      <h4 class="es">Agua potable, electricidad y fosas: las factibilidades que nadie verifica</h4>
+      <p class="es">Antes de comprar cualquier terreno rural, hay tres preguntas que deben tener respuesta escrita:</p>
+      <p class="es"><strong>1. ¿Tiene factibilidad de agua potable?</strong> En zona rural esto no es automático. Puede depender de un APR, de un pozo propio con derechos de aprovechamiento ante la DGA, o de una fuente superficial. Sin agua, no hay permiso de edificación.</p>
+      <p class="es"><strong>2. ¿Tiene factibilidad de electricidad?</strong> La extensión de redes en sectores rurales puede ser extremadamente costosa. He visto casos donde el costo de conexión superaba el valor del terreno.</p>
+      <p class="es"><strong>3. ¿Cómo se resolverá el saneamiento?</strong> La fosa séptica debe ubicarse a distancia mínima de la napa freática. En sectores como el valle del Maipo y sus afluentes, las napas son superficiales y sensibles. Una fosa mal instalada contamina el agua propia y la de los vecinos. He visto comunidades enteras con sus napas comprometidas por décadas de instalaciones informales.</p>
+
+      <h4 class="es">Construir es legal, pero hay reglas</h4>
+      <p class="es">Tener un título de dominio legítimo es el punto de partida, no el punto de llegada. Toda construcción requiere un Permiso de Edificación otorgado por la Dirección de Obras Municipales (DOM). Construir sin permiso no solo es ilegal: no puedes vender con facilidad, no puedes hipotecar, no puedes acceder a subsidios habitacionales, y en casos extremos la DOM puede ordenar la demolición. Regularizar es posible en muchos casos, pero siempre es más fácil y más barato hacerlo bien desde el principio.</p>
+
+      <h4 class="es">Un llamado a la conciencia sobre el crecimiento rural</h4>
+      <p class="es">El territorio rural no es infinito. Cada subdivisión informal, cada fosa mal instalada, cada construcción sin planificación, tiene consecuencias que van más allá del predio individual. Crecer en zonas rurales es legítimo y necesario, pero hacerlo bien requiere informarse, asesorarse, y asumir que habitar el territorio es también una responsabilidad colectiva.</p>
+
+      <div style="background:var(--terra);color:white;padding:1.5rem 2rem;border-radius:3px;margin-top:2.5rem;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;margin-bottom:0.5rem;color:white;">¿Tienes dudas sobre tu terreno o proyecto?</p>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);margin-bottom:0;">Escríbeme a <strong>lsalazarsalina@gmail.com</strong> o por WhatsApp al <strong>+56 9 7952 5044</strong>. Trabajo de forma remota en todo Chile.</p>
+      </div>
     </div>
   </div>
 </section>
