@@ -581,16 +581,18 @@
 
   .post-body p {
     color: var(--mid);
-    font-size: 1rem;
-    line-height: 1.85;
-    margin-bottom: 1.2rem;
+    font-size: 1.15rem;
+    line-height: 1.95;
+    margin-bottom: 1.5rem;
   }
   .post-body h4 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: var(--dark);
-    margin: 2rem 0 0.8rem;
+    margin: 2.5rem 0 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
   }
 
   /* PORTFOLIO */
@@ -1029,67 +1031,62 @@
     </a>
   </div>
 
-  <div id="post-1" style="display:none; margin-top:3rem; max-width:680px;">
-    <button onclick="document.getElementById('post-1').style.display='none'" style="background:none;border:1px solid var(--border);padding:0.4rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.06em;cursor:pointer;margin-bottom:2rem;color:var(--mid);">← <span class="es">Volver</span><span class="en">Back</span></button>
+  <div id="post-1" style="display:none; margin-top:3rem;">
+    <button onclick="document.getElementById('post-1').style.display='none'" style="background:none;border:1px solid var(--border);padding:0.5rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;letter-spacing:0.06em;cursor:pointer;margin-bottom:2.5rem;color:var(--mid);">← <span class="es">Volver al blog</span><span class="en">Back to blog</span></button>
 
-    <div class="blog-category es" style="margin-bottom:0.5rem;">Territorio · Normativa</div>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;line-height:1.15;color:var(--dark);margin-bottom:0.5rem;" class="es">Lo que nadie te dice cuando compras un terreno rural en Chile</h3>
-    <p style="font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;">Loreto Salazar Salina · Junio 2026</p>
+    <div class="blog-category es" style="margin-bottom:0.8rem;font-size:0.78rem;letter-spacing:0.15em;">Territorio · Normativa</div>
+
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.15;color:var(--dark);margin-bottom:0.8rem;" class="es">Lo que nadie te dice cuando compras un terreno rural en Chile</h3>
+
+    <p style="font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3rem;border-bottom:1px solid var(--border);padding-bottom:1.5rem;">Loreto Salazar Salina · Arquitecta N°300833 · Junio 2026</p>
 
     <div class="post-body">
+
       <p class="es">He trabajado como arquitecta en Puerto Williams, Purranque, Melipilla, Santiago, Pucón y Temuco — territorios muy distintos entre sí, pero con un problema que se repite en todos ellos: personas que compraron un terreno de buena fe, con ahorros de años, y que al momento de construir se encontraron con una trampa legal que nadie les había advertido. Esta entrada nace de esa experiencia acumulada en el territorio.</p>
 
+      <img src="img/blog-loteo-aereo.jpg" alt="Loteos irregulares en zona rural chilena" style="width:100%;border-radius:3px;margin:2rem 0 0.75rem;">
+      <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-bottom:2.5rem;font-style:italic;">Crecimiento informal en zona rural. Las construcciones sin planificación ni servicios básicos generan problemas que se acumulan por décadas.</p>
+
       <h4 class="es">Las cesiones de derechos: el negocio más peligroso del mundo rural</h4>
-      <p class="es">Cuando alguien te vende una "cesión de derechos" sobre un paño de terreno, no te está vendiendo una propiedad. Te está cediendo su parte en un bien que pertenece a varios herederos o copropietarios, muchos de los cuales ni siquiera saben que esa venta ocurrió. No hay escritura inscrita en el Conservador de Bienes Raíces. No hay título saneado. No hay nada que te proteja si mañana aparece otro heredero a reclamar.</p>
-      <p class="es" style="background:var(--terra-pale);border-left:3px solid var(--terra);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;">Si alguien te ofrece una cesión de derechos, aléjate. No importa cuán barato sea. No importa cuánto confíes en quien vende.</p>
+      <p class="es">Cuando alguien te vende una <strong>"cesión de derechos"</strong> sobre un paño de terreno, no te está vendiendo una propiedad. Te está cediendo su parte en un bien que pertenece a varios herederos o copropietarios, muchos de los cuales ni siquiera saben que esa venta ocurrió. No hay escritura inscrita en el Conservador de Bienes Raíces. No hay título saneado. No hay nada que te proteja si mañana aparece otro heredero a reclamar.</p>
+      <p class="es">He visto familias que llevaban diez años viviendo en un terreno así, que habían construido su casa con todo el esfuerzo del mundo, y que no podían regularizar porque el predio nunca estuvo realmente a su nombre.</p>
+
+      <div style="background:#fff3ee;border-left:4px solid var(--terra);padding:1.5rem 2rem;margin:2rem 0;border-radius:0 3px 3px 0;">
+        <p style="font-size:1.15rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--dark);margin:0;"><strong style="color:var(--terra);">Consejo:</strong> Si alguien te ofrece una cesión de derechos, aléjate. No importa cuán barato sea. No importa cuánto confíes en quien vende.</p>
+      </div>
 
       <h4 class="es">Los "retazos de terreno": cuando la informalidad se vuelve un laberinto</h4>
-      <p class="es">Los retazos son subdivisiones informales de predios rurales, vendidos sin plano de subdivisión aprobado por el municipio ni por el SAG. Muchos no cumplen con la superficie mínima exigida por la normativa. Al no existir como unidad legal independiente, no tienen rol SII propio y es imposible obtener permisos de edificación. La persona compró, construyó, vivió años ahí, y cuando quiso regularizar descubrió que su terreno no existe legalmente.</p>
+      <p class="es">Los retazos son subdivisiones informales de predios rurales, vendidos sin plano de subdivisión aprobado por el municipio ni por el SAG. Muchos no cumplen con la <strong>superficie mínima exigida por la normativa</strong>. Al no existir como unidad legal independiente, no tienen rol SII propio y es imposible obtener permisos de edificación.</p>
+      <p class="es">La persona compró, construyó, vivió años ahí, y cuando quiso regularizar descubrió que su terreno no existe legalmente. Es una situación muy difícil de resolver y muy costosa de sanear.</p>
+
+      <img src="img/blog-loteo-brujo.jpg" alt="Loteo brujo en zona rural" style="width:100%;border-radius:3px;margin:2rem 0 0.75rem;">
+      <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-bottom:2.5rem;font-style:italic;">Subdivisiones informales sin servicios básicos, sin acceso formal y sin respaldo legal. Una trampa silenciosa para quienes buscan su primer terreno.</p>
 
       <h4 class="es">Agua potable, electricidad y fosas: las factibilidades que nadie verifica</h4>
-      <p class="es">Antes de comprar cualquier terreno rural, hay tres preguntas que deben tener respuesta escrita:</p>
-      <p class="es"><strong>1. ¿Tiene factibilidad de agua potable?</strong> En zona rural esto no es automático. Puede depender de un APR, de un pozo propio con derechos de aprovechamiento ante la DGA, o de una fuente superficial. Sin agua, no hay permiso de edificación.</p>
-      <p class="es"><strong>2. ¿Tiene factibilidad de electricidad?</strong> La extensión de redes en sectores rurales puede ser extremadamente costosa. He visto casos donde el costo de conexión superaba el valor del terreno.</p>
-      <p class="es"><strong>3. ¿Cómo se resolverá el saneamiento?</strong> La fosa séptica debe ubicarse a distancia mínima de la napa freática. En sectores como el valle del Maipo y sus afluentes, las napas son superficiales y sensibles. Una fosa mal instalada contamina el agua propia y la de los vecinos. He visto comunidades enteras con sus napas comprometidas por décadas de instalaciones informales.</p>
+      <p class="es">Antes de comprar cualquier terreno rural, hay tres preguntas que deben tener respuesta <strong>por escrito</strong>:</p>
 
-      <h4 class="es">Construir es legal, pero hay reglas</h4>
-      <p class="es">Tener un título de dominio legítimo es el punto de partida, no el punto de llegada. Toda construcción requiere un Permiso de Edificación otorgado por la Dirección de Obras Municipales (DOM). Construir sin permiso no solo es ilegal: no puedes vender con facilidad, no puedes hipotecar, no puedes acceder a subsidios habitacionales, y en casos extremos la DOM puede ordenar la demolición. Regularizar es posible en muchos casos, pero siempre es más fácil y más barato hacerlo bien desde el principio.</p>
+      <p class="es"><strong>1. ¿Tiene factibilidad de agua potable?</strong><br>En zona rural esto no es automático. Puede depender de un APR (Agua Potable Rural), de un pozo propio con derechos de aprovechamiento ante la DGA, o de una fuente superficial. Sin agua acreditada, no hay permiso de edificación.</p>
+
+      <p class="es"><strong>2. ¿Tiene factibilidad de electricidad?</strong><br>La extensión de redes eléctricas en sectores rurales puede ser extremadamente costosa si el predio está lejos de la red existente. He visto casos donde el costo de conexión superaba el valor del terreno.</p>
+
+      <p class="es"><strong>3. ¿Cómo se resolverá el saneamiento?</strong><br>La fosa séptica debe ubicarse a distancia mínima de la napa freática y de cualquier fuente de agua. En sectores como el valle del Maipo y sus afluentes, las napas son superficiales y muy sensibles. Una fosa mal instalada no solo contamina el agua propia: contamina la de los vecinos. He visto comunidades enteras con sus napas comprometidas por décadas de instalaciones informales. El daño es silencioso y muy difícil de revertir.</p>
+
+      <h4 class="es">Construir es legal, pero hay reglas que cumplir</h4>
+      <p class="es">Aquí viene el segundo gran malentendido: mucha gente cree que porque el terreno es suyo, puede construir lo que quiera. <strong>No es así.</strong></p>
+      <p class="es">Toda construcción en Chile requiere un <strong>Permiso de Edificación</strong> otorgado por la Dirección de Obras Municipales (DOM) correspondiente. Esto implica cumplir con la Ley General de Urbanismo y Construcciones, el Plan Regulador, y las normas técnicas de habitabilidad, estructura y aislación térmica.</p>
+      <p class="es">Construir sin permiso genera problemas muy concretos: no puede vender con facilidad, no puede hipotecar, no puede acceder a subsidios habitacionales, y en casos extremos la DOM puede ordenar la demolición. Regularizar es posible en muchos casos, pero siempre es más fácil y más barato hacerlo bien desde el principio.</p>
 
       <h4 class="es">Un llamado a la conciencia sobre el crecimiento rural</h4>
-      <p class="es">El territorio rural no es infinito. Cada subdivisión informal, cada fosa mal instalada, cada construcción sin planificación, tiene consecuencias que van más allá del predio individual. Crecer en zonas rurales es legítimo y necesario, pero hacerlo bien requiere informarse, asesorarse, y asumir que habitar el territorio es también una responsabilidad colectiva.</p>
+      <p class="es">El territorio rural no es infinito. Cada subdivisión informal, cada fosa mal instalada, cada construcción sin planificación, tiene consecuencias que van más allá del predio individual. Afectan los suelos agrícolas, las napas, los cauces y la calidad de vida de comunidades que llevan generaciones en esos territorios.</p>
+      <p class="es">Crecer en zonas rurales es legítimo y necesario. Pero hacerlo bien requiere informarse, asesorarse, y asumir que habitar el territorio es también una responsabilidad colectiva.</p>
 
-      <div style="background:var(--terra);color:white;padding:1.5rem 2rem;border-radius:3px;margin-top:2.5rem;">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;margin-bottom:0.5rem;color:white;">¿Tienes dudas sobre tu terreno o proyecto?</p>
-        <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);margin-bottom:0;">Escríbeme a <strong>lsalazarsalina@gmail.com</strong> o por WhatsApp al <strong>+56 9 7952 5044</strong>. Trabajo de forma remota en todo Chile.</p>
+      <div style="background:var(--terra);color:white;padding:2rem 2.5rem;border-radius:3px;margin-top:3rem;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;margin-bottom:0.8rem;color:white;font-weight:600;">¿Tienes dudas sobre tu terreno o proyecto?</p>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.92);line-height:1.7;margin:0;">Puedo orientarte antes de que tomes una decisión equivocada. Trabajo de forma remota en todo Chile.<br><strong>lsalazarsalina@gmail.com</strong> · <strong>+56 9 7952 5044</strong></p>
       </div>
+
     </div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="section-tag">Portfolio</div>
-  <h2 class="section-title">
-    <span class="es">Proyectos que<br><em>hablan del lugar.</em></span>
-    <span class="en">Projects that<br><em>speak of place.</em></span>
-  </h2>
-
-  <div class="portfolio-group-title es">Cartografías · Lugares donde he trabajado</div>
-  <div class="portfolio-group-title en">Cartographies · Places I've worked</div>
-  <div class="portfolio-grid">
-    <div class="portfolio-item tall"><img src="img/mapa-melipilla-pomaire.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Melipilla · Pomaire</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-bollenar.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Bollenar · Melipilla</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-sanjose.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">San José · Melipilla</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-codigua.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Codigua · Melipilla</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-pabellon.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Pabellón · Melipilla</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-pomaire.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Pomaire</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-bollenar2.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Bollenar · Melipilla</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-    <div class="portfolio-item"><img src="img/mapa-pucon.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Pucón · La Araucanía</div><div class="portfolio-loc"><span class="es">Cartografía · Zona de trabajo</span><span class="en">Cartography · Work area</span></div></div></div>
-
-    <div class="portfolio-item tall"><img src="img/mapa-puerto-williams.jpg" style="width:100%;height:100%;object-fit:cover;"><div class="portfolio-overlay"><div class="portfolio-title">Puerto Williams</div><div class="portfolio-loc">Canal Beagle · <span class="es">Cartografía</span><span class="en">Cartography</span></div></div></div>
-  </div>
+  </div></div>
 
   <div class="portfolio-group-title es">Modelados 3D & Proyectos</div>
   <div class="portfolio-group-title en">3D Models & Projects</div>
