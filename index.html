@@ -105,12 +105,19 @@
   .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    padding: 80px 2rem 4rem;
-    max-width: 900px;
-    margin: 0 auto;
+    align-items: flex-end;
+    padding: 80px 2rem 5rem;
     position: relative;
     overflow: hidden;
+    background: url('img/loreto-mar.jpg') center 30% / cover no-repeat;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,8,6,0.75) 0%, rgba(10,8,6,0.2) 60%, transparent 100%);
+    z-index: 0;
   }
 
   .hero-chile {
@@ -135,7 +142,8 @@
 
   .hero-inner {
     width: 100%;
-    max-width: 520px;
+    max-width: 900px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
   }
@@ -144,7 +152,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
@@ -156,7 +164,7 @@
     display: inline-block;
     width: 32px;
     height: 1px;
-    background: var(--accent);
+    background: rgba(255,255,255,0.8);
   }
 
   .hero h1 {
@@ -164,18 +172,18 @@
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 300;
     line-height: 1.05;
-    color: var(--dark);
+    color: white;
     margin-bottom: 2rem;
   }
 
   .hero h1 em {
     font-style: italic;
-    color: var(--terra);
+    color: #e8a882;
   }
 
   .hero-desc {
     max-width: 560px;
-    color: var(--mid);
+    color: rgba(255,255,255,0.85);
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 3rem;
@@ -216,11 +224,11 @@
   .btn-secondary:hover { border-color: var(--terra); color: var(--terra); }
 
   .hero-scroll {
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: var(--muted);
+    color: rgba(255,255,255,0.5);
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -793,12 +801,12 @@
 
 <!-- HERO -->
 <div class="hero">
-  <img src="chile.png" alt="" class="hero-chile">
   <div class="hero-inner">
     <div class="hero-tag">
       Arquitectura · Territorio · Chile
     </div>
     <h1>El territorio<br>es mi <em>escuela.</em></h1>
+    <img src="chile.png" style="height:40px;opacity:0.6;margin-bottom:1.5rem;filter:invert(1);display:block;">
     <p class="hero-desc">Arquitectura rural, bioconstrucción y planificación territorial en Chile. Desde el territorio, y ahora desde el mar.</p>
     <div class="hero-cta">
       <a href="#servicios" class="btn-primary">Ver servicios</a>
